@@ -29,6 +29,7 @@ public class ScoreManager : MonoBehaviour
     {
         score += amount;
         UpdateUI();
+        GameResetManager.Instance.UpdateScore(score);
     }
 
 
