@@ -17,15 +17,16 @@ public class FoodItem : MonoBehaviour
     public Vector3 exitDirection = new Vector3(0, 1, -1);
     [Header("煮熟参数")]
     public float cookTime = 5f;         // 煮熟所需时间
-    public float overcookTime = 10f;    // 变老所需时间（进入锅后总时间）
+    public float overcookTime = 10f;    // 变老所需时间
     private float cookTimer = 0f;
     public Color raw;
     public Color ripe;
     public Color burnt;
-    private enum CookState { Raw, Cooked, Overcooked }
+    public enum CookState { Raw, Cooked, Overcooked }
     private CookState cookState = CookState.Raw;
 
     private Material instanceMaterial;
+    public FoodType foodType;
 
 
     void Start()
@@ -79,6 +80,11 @@ public class FoodItem : MonoBehaviour
         }
     }
 
+    public CookState GetCookState()
+    {
+        return cookState;
+    }
+
     private void EnterPot()
     {
         currentState = FoodState.InPot;
@@ -100,17 +106,11 @@ public class FoodItem : MonoBehaviour
 
         if (buoyancy != null) buoyancy.isActive = false;
 
+        FoodSpawner.Instance.OnFoodTaken(foodType);
+        ComboManager.Instance.OnFoodTaken(this);
+
         Debug.Log(name + " 被夹起来了！");
     }
-
-    //void LateUpdate()
-    //{
-    //    if (instanceMaterial && WaterManager.Instance)
-    //    {
-    //        instanceMaterial.SetFloat("_WaterHeight",
-    //            WaterManager.Instance.GetWaterHeight(transform.position)); // 平面水直接用 baseWaterHeight
-    //    }
-    //}
 
     void Update()
     {
@@ -125,11 +125,12 @@ public class FoodItem : MonoBehaviour
                 instanceMaterial.color = ripe; // 煮熟颜色
                 Debug.Log(name + " 煮熟了");
             }
-            else if (cookState == CookState.Cooked && cookTimer >= overcookTime)
+            else if (cookState == CookState.Cooked && cookTimer >= overcookTime+cookTime)
             {
                 cookState = CookState.Overcooked;
                 instanceMaterial.color = burnt; // 过老颜色
                 Debug.Log(name + " 煮老了");
+                ScoreManager.Instance.ChangeScore(-3);
             }
 
             // 点击检测（夹起）
@@ -147,7 +148,7 @@ public class FoodItem : MonoBehaviour
                         {
                             ScoreManager.Instance.ChangeScore(5);
                         }
-                        else
+                        else if(cookState == CookState.Raw)
                         {
                             ScoreManager.Instance.ChangeScore(-3);
                         }

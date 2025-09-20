@@ -3,9 +3,11 @@ using TMPro;
 
 public class CountdownClock : MonoBehaviour
 {
+    public static CountdownClock Instance;
     [Header("倒计时设置")]
     public float totalTime = 60f;   // 总时间（秒）
     private float timer;
+    public GameObject buffle;
 
     [Header("时钟指针")]
     public Transform clockHand;     // 指针对象
@@ -16,9 +18,9 @@ public class CountdownClock : MonoBehaviour
 
     private bool isRunning = false;
 
-    void Start()
+    private void Awake()
     {
-        StartCountdown();
+        Instance = this;
     }
 
     void Update()
@@ -51,6 +53,7 @@ public class CountdownClock : MonoBehaviour
         {
             isRunning = false;
             Debug.Log("倒计时结束！");
+            buffle.SetActive(true);
         }
     }
 

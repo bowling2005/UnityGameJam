@@ -9135,3 +9135,327 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:scripting/monoscript/fileName/ScoreManager.cs: 2117df56b7ba23abd331d761e713022a -> 
   custom:scripting/precompiled-assembly-types:Assembly-CSharp: 5692e97949cfc391ba5aea441fefcdcf -> 
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.675 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  1.442 seconds
+Domain Reload Profiling: 2117ms
+	BeginReloadAssembly (396ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (30ms)
+	RebuildCommonClasses (30ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (24ms)
+	LoadAllAssembliesAndSetupDomain (214ms)
+		LoadAssemblies (535ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (18ms)
+			TypeCache.Refresh (9ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (8ms)
+	FinalizeReload (1443ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (486ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (57ms)
+			ProcessInitializeOnLoadAttributes (407ms)
+			ProcessInitializeOnLoadMethodAttributes (12ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (9ms)
+Refreshing native plugins compatible for Editor in 3.44 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3366 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 26 unused Assets / (0.7 MB). Loaded Objects now: 4219.
+Memory consumption went from 128.9 MB to 128.2 MB.
+Total: 3.083200 ms (FindLiveObjects: 0.197100 ms CreateObjectMapping: 0.077000 ms MarkObjects: 2.433300 ms  DeleteObjects: 0.374800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:scripting/monoscript/fileName/StartCountdown.cs: 5328fe2773e39a4d9bfac34d7e4abd02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:scripting/monoscript/fileName/BuoyancyObject.cs: fa0c40596a6f6b362229681e8117ff22 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/WaterManager.cs: 108f30021ee18c3fdce48d376b3e8b02 -> 
+  custom:CustomObjectIndexerAttribute: 299a746012abc5adb0180d4ccda8d3ad -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/FoodSpawner.cs: bda1aa77a1676f8f494fc5828044b291 -> 
+  custom:scripting/monoscript/fileName/CountdownClock.cs: 05af265bd903aca7504546446bd8f724 -> 
+  custom:scripting/monoscript/fileName/FoodItem.cs: 2b6c02885b746e6bc562b36fc48b6c45 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/SimpleBuoyancy.cs: 50b1b08ce6262250360d81c94bc45a73 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/ScoreManager.cs: 2117df56b7ba23abd331d761e713022a -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 5692e97949cfc391ba5aea441fefcdcf -> 
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.335 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  1.803 seconds
+Domain Reload Profiling: 3144ms
+	BeginReloadAssembly (778ms)
+		ExecutionOrderSort (1ms)
+		DisableScriptedObjects (37ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (2ms)
+		CreateAndSetChildDomain (364ms)
+	RebuildCommonClasses (37ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (49ms)
+	LoadAllAssembliesAndSetupDomain (464ms)
+		LoadAssemblies (691ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (25ms)
+			TypeCache.Refresh (16ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (7ms)
+	FinalizeReload (1805ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (865ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (15ms)
+			SetLoadedEditorAssemblies (13ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (114ms)
+			ProcessInitializeOnLoadAttributes (701ms)
+			ProcessInitializeOnLoadMethodAttributes (19ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (16ms)
+Refreshing native plugins compatible for Editor in 4.25 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3366 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 26 unused Assets / (0.7 MB). Loaded Objects now: 4222.
+Memory consumption went from 128.9 MB to 128.2 MB.
+Total: 5.870700 ms (FindLiveObjects: 0.255500 ms CreateObjectMapping: 0.060900 ms MarkObjects: 5.202100 ms  DeleteObjects: 0.350600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:scripting/monoscript/fileName/StartCountdown.cs: 5328fe2773e39a4d9bfac34d7e4abd02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:scripting/monoscript/fileName/BuoyancyObject.cs: fa0c40596a6f6b362229681e8117ff22 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/WaterManager.cs: 108f30021ee18c3fdce48d376b3e8b02 -> 
+  custom:CustomObjectIndexerAttribute: 299a746012abc5adb0180d4ccda8d3ad -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/FoodSpawner.cs: bda1aa77a1676f8f494fc5828044b291 -> 
+  custom:scripting/monoscript/fileName/CountdownClock.cs: 05af265bd903aca7504546446bd8f724 -> 
+  custom:scripting/monoscript/fileName/FoodItem.cs: 2b6c02885b746e6bc562b36fc48b6c45 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/SimpleBuoyancy.cs: 50b1b08ce6262250360d81c94bc45a73 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/ScoreManager.cs: 2117df56b7ba23abd331d761e713022a -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 5692e97949cfc391ba5aea441fefcdcf -> 
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.695 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  1.886 seconds
+Domain Reload Profiling: 2583ms
+	BeginReloadAssembly (259ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (11ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (91ms)
+	RebuildCommonClasses (27ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (28ms)
+	LoadAllAssembliesAndSetupDomain (373ms)
+		LoadAssemblies (482ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (15ms)
+			TypeCache.Refresh (8ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (1ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (1888ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (860ms)
+			LogAssemblyErrors (1ms)
+			InitializePlatformSupportModulesInManaged (24ms)
+			SetLoadedEditorAssemblies (23ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (102ms)
+			ProcessInitializeOnLoadAttributes (677ms)
+			ProcessInitializeOnLoadMethodAttributes (30ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (13ms)
+Callback registration failed. Increase kMaxCallback.
+Fatal Error! Callback registration failed. Increase kMaxCallback.
+Crash!!!
+SymInit: Symbol-SearchPath: 'D:/Tuanjie/Editor/Data/Mono;.;D:\GameJam\UnityGameJam\Bashi Hotpot;D:\GameJam\UnityGameJam\Bashi Hotpot\Library\BurstCache\JIT;D:\Tuanjie\Editor;C:\WINDOWS;C:\WINDOWS\system32;', symOptions: 534, UserName: 'a1125'
+OS-Version: 10.0.0
+D:\Tuanjie\Editor\Tuanjie.exe:Tuanjie.exe (00007FF64DCE0000), size: 92303360 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2022.3.61.42023
+C:\WINDOWS\SYSTEM32\ntdll.dll:ntdll.dll (00007FFBD8480000), size: 2527232 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\System32\KERNEL32.DLL:KERNEL32.DLL (00007FFBD7270000), size: 823296 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\System32\KERNELBASE.dll:KERNELBASE.dll (00007FFBD56A0000), size: 4141056 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.6584
+C:\WINDOWS\System32\CRYPT32.dll:CRYPT32.dll (00007FFBD5BF0000), size: 1536000 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\System32\ucrtbase.dll:ucrtbase.dll (00007FFBD5AA0000), size: 1355776 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\System32\USER32.dll:USER32.dll (00007FFBD6DF0000), size: 1851392 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\System32\win32u.dll:win32u.dll (00007FFBD5F90000), size: 159744 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\System32\GDI32.dll:GDI32.dll (00007FFBD6250000), size: 176128 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\System32\gdi32full.dll:gdi32full.dll (00007FFBD6060000), size: 1232896 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\System32\msvcp_win.dll:msvcp_win.dll (00007FFBD5EE0000), size: 667648 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\System32\ADVAPI32.dll:ADVAPI32.dll (00007FFBD7CD0000), size: 737280 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.6584
+C:\WINDOWS\System32\msvcrt.dll:msvcrt.dll (00007FFBD76B0000), size: 692224 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 7.0.26100.5074
+D:\Tuanjie\Editor\libfbxsdk.dll:libfbxsdk.dll (00007FFB2B270000), size: 10215424 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2020.2.0.0
+C:\WINDOWS\System32\sechost.dll:sechost.dll (00007FFBD71B0000), size: 679936 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.6584
+D:\Tuanjie\Editor\CMP_Compressonator.dll:CMP_Compressonator.dll (00007FFB2E1F0000), size: 757760 (result: 0), SymType: '-deferred-', PDB: ''
+D:\Tuanjie\Editor\etccompress.dll:etccompress.dll (00007FFB2AD90000), size: 5070848 (result: 0), SymType: '-deferred-', PDB: ''
+C:\WINDOWS\System32\RPCRT4.dll:RPCRT4.dll (00007FFBD7D90000), size: 1146880 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\System32\SHELL32.dll:SHELL32.dll (00007FFBD66A0000), size: 7655424 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.6584
+D:\Tuanjie\Editor\ispc_texcomp.dll:ispc_texcomp.dll (00007FFB2E030000), size: 1826816 (result: 0), SymType: '-deferred-', PDB: ''
+C:\WINDOWS\System32\wintypes.dll:wintypes.dll (00007FFBD5D70000), size: 1490944 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\System32\combase.dll:combase.dll (00007FFBD7FD0000), size: 3649536 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+D:\Tuanjie\Editor\compress_bc7e.dll:compress_bc7e.dll (00007FFB2DED0000), size: 1433600 (result: 0), SymType: '-deferred-', PDB: ''
+C:\WINDOWS\System32\SHLWAPI.dll:SHLWAPI.dll (00007FFBD83D0000), size: 401408 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.6584
+C:\WINDOWS\System32\ole32.dll:ole32.dll (00007FFBD6FC0000), size: 1671168 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\System32\IMM32.dll:IMM32.dll (00007FFBD7490000), size: 192512 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.4484
+C:\WINDOWS\System32\SETUPAPI.dll:SETUPAPI.dll (00007FFBD7840000), size: 4747264 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\System32\WS2_32.dll:WS2_32.dll (00007FFBD8350000), size: 475136 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\System32\OLEAUT32.dll:OLEAUT32.dll (00007FFBD7760000), size: 880640 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+D:\Tuanjie\Editor\FreeImage.dll:FreeImage.dll (0000000180000000), size: 5783552 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 3.18.0.0
+C:\WINDOWS\System32\WINTRUST.dll:WINTRUST.dll (00007FFBD5610000), size: 516096 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+D:\Tuanjie\Editor\WinPixEventRuntime.dll:WinPixEventRuntime.dll (00007FFBCD990000), size: 45056 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 1.0.1812.6001
+C:\WINDOWS\SYSTEM32\OPENGL32.dll:OPENGL32.dll (00007FFBC0DD0000), size: 1097728 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL:IPHLPAPI.DLL (00007FFBD3E00000), size: 212992 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\SYSTEM32\GLU32.dll:GLU32.dll (00007FFBBFF80000), size: 184320 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.1150
+C:\WINDOWS\SYSTEM32\WINHTTP.dll:WINHTTP.dll (00007FFBCC5A0000), size: 1175552 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\SYSTEM32\bcrypt.dll:bcrypt.dll (00007FFBD5500000), size: 155648 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\SYSTEM32\WINMM.dll:WINMM.dll (00007FFBC8110000), size: 217088 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\SYSTEM32\HID.DLL:HID.DLL (00007FFBD3AB0000), size: 61440 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.1150
+C:\WINDOWS\SYSTEM32\dwmapi.dll:dwmapi.dll (00007FFBD1B20000), size: 176128 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+D:\Tuanjie\Editor\SketchUpAPI.dll:SketchUpAPI.dll (00007FFB2A2F0000), size: 9306112 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 20.2.172.0
+D:\Tuanjie\Editor\NativeProxyHelper.dll:NativeProxyHelper.dll (00007FFB2ABD0000), size: 1789952 (result: 0), SymType: '-deferred-', PDB: ''
+C:\WINDOWS\SYSTEM32\VERSION.dll:VERSION.dll (00007FFBCEF20000), size: 45056 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.1150
+C:\WINDOWS\SYSTEM32\WSOCK32.dll:WSOCK32.dll (00007FFBCBD80000), size: 40960 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.1
+D:\Tuanjie\Editor\SketchUpCommonPreferences.dll:SketchUpCommonPreferences.dll (00007FFBC64F0000), size: 479232 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 20.2.172.37
+C:\WINDOWS\SYSTEM32\MSVCP140.dll:MSVCP140.dll (00007FFBC0CC0000), size: 577536 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 14.42.34438.0
+C:\WINDOWS\SYSTEM32\VCRUNTIME140.dll:VCRUNTIME140.dll (00007FFBC4F60000), size: 122880 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 14.42.34438.0
+C:\WINDOWS\SYSTEM32\Secur32.dll:Secur32.dll (00007FFBD17E0000), size: 53248 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.1
+C:\WINDOWS\SYSTEM32\dxcore.dll:dxcore.dll (00007FFBD1D60000), size: 278528 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\SYSTEM32\VCRUNTIME140_1.dll:VCRUNTIME140_1.dll (00007FFBC4E50000), size: 49152 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 14.42.34438.0
+C:\WINDOWS\SYSTEM32\MSWSOCK.DLL:MSWSOCK.DLL (00007FFBD4970000), size: 438272 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\SYSTEM32\SSPICLI.DLL:SSPICLI.DLL (00007FFBD4690000), size: 299008 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.6584
+C:\WINDOWS\SYSTEM32\MSASN1.dll:MSASN1.dll (00007FFBD4D40000), size: 77824 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\SYSTEM32\CRYPTBASE.DLL:CRYPTBASE.DLL (00007FFBD4C30000), size: 49152 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\System32\bcryptPrimitives.dll:bcryptPrimitives.dll (00007FFBD5FC0000), size: 626688 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\SYSTEM32\cfgmgr32.DLL:cfgmgr32.DLL (00007FFBD52C0000), size: 356352 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.4202
+C:\WINDOWS\SYSTEM32\kernel.appcore.dll:kernel.appcore.dll (00007FFBD43D0000), size: 110592 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\system32\uxtheme.dll:uxtheme.dll (00007FFBD1A00000), size: 688128 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\ProgramData\A-Volute\A-Volute.Nahimic\Modules\Scheduled\x64\AudioDevProps2.dll:AudioDevProps2.dll (00007FFB633C0000), size: 1257472 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2.6.28.0
+C:\WINDOWS\SYSTEM32\windows.storage.dll:windows.storage.dll (00007FFBD3250000), size: 8753152 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.6584
+C:\WINDOWS\System32\SHCORE.dll:SHCORE.dll (00007FFBD6510000), size: 983040 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.6584
+C:\WINDOWS\SYSTEM32\profapi.dll:profapi.dll (00007FFBD5530000), size: 167936 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.4768
+C:\WINDOWS\system32\IconCodecService.dll:IconCodecService.dll (00007FFB90F80000), size: 45056 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.1
+C:\WINDOWS\SYSTEM32\WindowsCodecs.dll:WindowsCodecs.dll (00007FFBD0690000), size: 2289664 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.6584
+C:\WINDOWS\System32\clbcatq.dll:clbcatq.dll (00007FFBD6280000), size: 724992 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2001.12.10941.16384
+C:\WINDOWS\System32\netprofm.dll:netprofm.dll (00007FFBCF060000), size: 442368 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\System32\NSI.dll:NSI.dll (00007FFBD7260000), size: 40960 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\SYSTEM32\dhcpcsvc6.DLL:dhcpcsvc6.DLL (00007FFBCC570000), size: 122880 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL:dhcpcsvc.DLL (00007FFBCC510000), size: 143360 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\SYSTEM32\DNSAPI.dll:DNSAPI.dll (00007FFBD3EA0000), size: 1204224 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.6584
+C:\WINDOWS\System32\npmproxy.dll:npmproxy.dll (00007FFBCB520000), size: 102400 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.1150
+C:\WINDOWS\system32\napinsp.dll:napinsp.dll (00007FFBB0D10000), size: 98304 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.1150
+C:\WINDOWS\System32\winrnr.dll:winrnr.dll (00007FFBB0CF0000), size: 73728 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.1882
+C:\WINDOWS\system32\nlansp_c.dll:nlansp_c.dll (00007FFBA52A0000), size: 163840 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\system32\wshbth.dll:wshbth.dll (00007FFBCDAD0000), size: 90112 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\System32\fwpuclnt.dll:fwpuclnt.dll (00007FFBCB750000), size: 548864 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.6584
+C:\Windows\System32\rasadhlp.dll:rasadhlp.dll (00007FFBCD260000), size: 45056 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.6584
+D:\Tuanjie\Editor\NVTuanjiePlugin.DLL:NVTuanjiePlugin.DLL (00007FFB2A1C0000), size: 1228800 (result: 0), SymType: '-deferred-', PDB: ''
+D:\Tuanjie\Editor\Data\Tools\astcenc-avx2.dll:astcenc-avx2.dll (00007FFB2DE40000), size: 540672 (result: 0), SymType: '-deferred-', PDB: ''
+C:\WINDOWS\SYSTEM32\d3d11.dll:d3d11.dll (00007FFBD2CB0000), size: 2490368 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\SYSTEM32\dxgi.dll:dxgi.dll (00007FFBD2F20000), size: 1286144 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\SYSTEM32\powrprof.dll:powrprof.dll (00007FFBD5220000), size: 385024 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.3912
+C:\WINDOWS\SYSTEM32\UMPDC.dll:UMPDC.dll (00007FFBD5200000), size: 81920 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.1301
+C:\WINDOWS\SYSTEM32\directxdatabasehelper.dll:directxdatabasehelper.dll (00007FFBCF4F0000), size: 393216 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_749d16baad25e716\igd10iumd64.dll:igd10iumd64.dll (00007FFBBDFE0000), size: 5353472 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 32.0.101.6790
+C:\WINDOWS\SYSTEM32\apphelp.dll:apphelp.dll (00007FFBD1830000), size: 647168 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_749d16baad25e716\igd10um64xe.DLL:igd10um64xe.DLL (00007FFBBC440000), size: 17903616 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 32.0.101.6790
+C:\WINDOWS\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_749d16baad25e716\IntelControlLib.dll:IntelControlLib.dll (00007FFBB2620000), size: 704512 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 1.1.240.0
+C:\WINDOWS\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_749d16baad25e716\igdgmm64.dll:igdgmm64.dll (00007FFBBA770000), size: 5844992 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 32.0.101.6790
+C:\WINDOWS\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_749d16baad25e716\igc64.dll:igc64.dll (00007FFBB4120000), size: 85233664 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 32.0.101.6790
+C:\WINDOWS\system32\wbem\wbemprox.dll:wbemprox.dll (00007FFBCB850000), size: 73728 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\SYSTEM32\wbemcomn.dll:wbemcomn.dll (00007FFBC5180000), size: 499712 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\system32\wbem\wbemsvc.dll:wbemsvc.dll (00007FFBC4CF0000), size: 86016 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\system32\wbem\fastprox.dll:fastprox.dll (00007FFBB2340000), size: 983040 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\SYSTEM32\amsi.dll:amsi.dll (00007FFBC4CD0000), size: 118784 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\WINDOWS\SYSTEM32\opencl.dll:opencl.dll (00007FFB2A140000), size: 483328 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 3.0.6.0
+D:\Tuanjie\Editor\radeonrays.dll:radeonrays.dll (00007FFB2A0B0000), size: 557056 (result: 0), SymType: '-deferred-', PDB: ''
+D:\Tuanjie\Editor\Data\MonoBleedingEdge\EmbedRuntime\mono-2.0-bdwgc.dll:mono-2.0-bdwgc.dll (00007FFB13660000), size: 10887168 (result: 0), SymType: '-deferred-', PDB: ''
+C:\WINDOWS\SYSTEM32\dbghelp.dll:dbghelp.dll (00007FFBD2A60000), size: 2367488 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+
+========== OUTPUTTING STACK TRACE ==================
+
+0x00007FFBD57666CA (KERNELBASE) RaiseException
+0x00007FF64FB50790 (Tuanjie) EditorMonoConsole::LogToConsoleImplementation
+0x00007FF64FB5120D (Tuanjie) EditorMonoConsole::LogToConsoleImplementation
+0x00007FF65083B02F (Tuanjie) DebugStringToFilePostprocessedStacktrace
+0x00007FF65083A78A (Tuanjie) DebugStringToFile
+0x00007FF650017A39 (Tuanjie) LoadDomainAndUserAssemblies
+0x00007FF650460974 (Tuanjie) WorkerDomainReloadV2
+0x00007FF650481187 (Tuanjie) <lambda_8f254ceb0e70e0593d215d619e9c80c6>::operator()
+0x00007FF6504C0102 (Tuanjie) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)>,asio::io_context::basic_executor_type<std::allocator<void>,0> >::do_complete
+0x00007FF6504AB94E (Tuanjie) asio::detail::win_iocp_io_context::do_one
+0x00007FF6504AD844 (Tuanjie) asio::detail::win_iocp_io_context::run
+0x00007FF6504BE41C (Tuanjie) IOService::Run
+0x00007FF65048F4CF (Tuanjie) AssetImportWorkerClient::Run
+0x00007FF65045A227 (Tuanjie) RunAssetImportWorkerClientV2
+0x00007FF65045A2AB (Tuanjie) RunAssetImporterV2
+0x00007FF64FCD4EAB (Tuanjie) Application::InitializeProject
+0x00007FF65015E8E6 (Tuanjie) WinMain
+0x00007FF65158246E (Tuanjie) __scrt_common_main_seh
+0x00007FFBD729E8D7 (KERNEL32) BaseThreadInitThunk
+0x00007FFBD8488D9C (ntdll) RtlUserThreadStart
+
+========== END OF STACKTRACE ===========
+
+A crash has been intercepted by the crash handler. For call stack and other details, see the latest crash report generated in:
+ * C:/Users/a1125/AppData/Local/Temp/Tuanjie/Editor/Crashes

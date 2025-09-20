@@ -60,6 +60,7 @@
     <Analyzer Include="D:\Tuanjie\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\ComboManager.cs" />
     <Compile Include="Assets\Script\ScoreManager.cs" />
     <Compile Include="Assets\Script\CountdownClock.cs" />
     <Compile Include="Assets\Script\FoodSpawner.cs" />

@@ -12,12 +12,12 @@ public class StartCountdownRawImages : MonoBehaviour
     public float scaleStart = 4f; 
     public float scaleEnd = 1f; 
     public float duration = 0.5f;
-    public float holdTime = 0.5f; 
-
+    public float holdTime = 0.5f;
     public System.Action onCountdownEnd;
 
     void Start()
     {
+        CountdownClock.Instance.buffle.SetActive(true);
         StartCoroutine(DoCountdown());
     }
 
@@ -49,6 +49,8 @@ public class StartCountdownRawImages : MonoBehaviour
 
         // µ¹¼ÆÊ±½áÊø
         countdownImage.gameObject.SetActive(false);
+        CountdownClock.Instance.buffle.SetActive(false);
+        CountdownClock.Instance.StartCountdown();
         onCountdownEnd?.Invoke();
     }
 }
