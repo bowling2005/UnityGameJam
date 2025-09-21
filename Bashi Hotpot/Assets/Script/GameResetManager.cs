@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.IO;
 
 public class GameResetManager : MonoBehaviour
@@ -37,6 +36,9 @@ public class GameResetManager : MonoBehaviour
     private HighScoreData highScoreData = new HighScoreData();
     private int currentScore = 0;
 
+    // 添加对ResetManager的引用
+    private ResetManager resetManager;
+
     void Awake()
     {
         if (_instance != null && _instance != this)
@@ -48,10 +50,14 @@ public class GameResetManager : MonoBehaviour
         _instance = this;
         DontDestroyOnLoad(gameObject);
 
-        
         highScoreFilePath = Path.Combine(Application.persistentDataPath, "highscores.json");
-
         LoadHighScores();
+    }
+
+    void Start()
+    {
+        // 获取ResetManager引用
+        resetManager = ResetManager.Instance;
     }
 
     // 更新当前分数并检查是否需要更新最高分
@@ -63,13 +69,11 @@ public class GameResetManager : MonoBehaviour
 
     private void CheckAndUpdateHighScores()
     {
-        
         if (highScoreData.highScores.Count < 10 || currentScore > highScoreData.highScores[highScoreData.highScores.Count - 1])
         {
             highScoreData.highScores.Add(currentScore);
-            highScoreData.highScores.Sort((a, b) => b.CompareTo(a)); 
+            highScoreData.highScores.Sort((a, b) => b.CompareTo(a));
 
-            
             if (highScoreData.highScores.Count > 10)
             {
                 highScoreData.highScores = highScoreData.highScores.GetRange(0, 10);
@@ -79,7 +83,6 @@ public class GameResetManager : MonoBehaviour
         }
     }
 
-    
     private void LoadHighScores()
     {
         if (File.Exists(highScoreFilePath))
@@ -89,52 +92,42 @@ public class GameResetManager : MonoBehaviour
         }
         else
         {
-            
             highScoreData = new HighScoreData();
         }
     }
 
-   
     private void SaveHighScores()
     {
         string json = JsonUtility.ToJson(highScoreData, true);
         File.WriteAllText(highScoreFilePath, json);
     }
 
-    
     public List<int> GetHighScores()
     {
         return new List<int>(highScoreData.highScores);
     }
 
-   
     public void ResetGame()
     {
         ResetTimeScale();
-        StartCoroutine(ResetGameCoroutine());
+        // 直接调用重置方法，不再使用协程重新加载场景
+        PerformReset();
     }
 
-    private IEnumerator ResetGameCoroutine()
+    private void PerformReset()
     {
-       
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-
-        for (int i = 0; i < SceneManager.sceneCount; i++)
+        // 调用ResetManager的重置方法
+        if (resetManager != null)
         {
-            Scene scene = SceneManager.GetSceneAt(i);
-            if (scene.buildIndex != currentSceneIndex && scene.isLoaded)
-            {
-                yield return SceneManager.UnloadSceneAsync(scene);
-            }
+            resetManager.Reset();
+        }
+        else
+        {
+            // 备用重置逻辑
+            ResetAllResettableObjects();
         }
 
-       
-        ResetAllResettableObjects();
-
-        
-        yield return SceneManager.LoadSceneAsync(currentSceneIndex, LoadSceneMode.Single);
-
-        
+        // 重置当前分数
         currentScore = 0;
 
         Debug.Log("游戏已重置！");
@@ -143,7 +136,6 @@ public class GameResetManager : MonoBehaviour
     // 查找并重置所有实现了IResettable接口的对象
     private void ResetAllResettableObjects()
     {
-        // 查找所有实现了IResettable接口的对象
         var resettables = FindObjectsOfType<MonoBehaviour>(true);
         foreach (var obj in resettables)
         {
@@ -157,11 +149,11 @@ public class GameResetManager : MonoBehaviour
         Resources.UnloadUnusedAssets();
         System.GC.Collect();
     }
+
     public void ResetTimeScale()
     {
         Time.timeScale = 1f;
     }
-
 }
 
 // 可重置接口
