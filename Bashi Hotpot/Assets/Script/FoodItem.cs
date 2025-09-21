@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class FoodItem : MonoBehaviour
@@ -27,6 +28,20 @@ public class FoodItem : MonoBehaviour
 
     private Material instanceMaterial;
     public FoodType foodType;
+    private Vector3 initialPos;
+    private Quaternion initialRot;
+
+    private Collider col;
+
+    AudioSource audioSource;
+
+    private int foodLayer;
+    private int potEdgeLayer;
+    GameObject smokePrefab;
+    private void Awake()
+    {
+        audioSource = gameObject.AddComponent<AudioSource>();
+    }
 
 
     void Start()
@@ -34,14 +49,29 @@ public class FoodItem : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         buoyancy = GetComponent<BuoyancyObject>();
         cam = Camera.main;
+        col = GetComponent<Collider>();
+        smokePrefab = FoodSpawner.Instance.smoke;
 
-        // 初始状态不受物理影响
         rb.useGravity = false;
         rb.isKinematic = true;
         if (buoyancy != null) buoyancy.isActive = false;
-        // 克隆一个独立材质实例，避免改到别的食物
+
+        if (col != null) col.isTrigger = true;   // 初始禁用碰撞体
+
         instanceMaterial = GetComponent<Renderer>().material;
-        instanceMaterial.color = raw; // 初始未熟颜色
+        instanceMaterial.color = raw;
+
+        initialPos = transform.position;
+        initialRot = transform.rotation;
+
+        foodLayer = LayerMask.NameToLayer("Food");
+        potEdgeLayer = LayerMask.NameToLayer("PotEdge");
+
+        // 初始禁用 Food 与 PotEdge 的碰撞
+        if (foodLayer >= 0 && potEdgeLayer >= 0)
+        {
+            Physics.IgnoreLayerCollision(foodLayer, potEdgeLayer, true);
+        }
     }
 
     void OnMouseDown()
@@ -54,6 +84,9 @@ public class FoodItem : MonoBehaviour
             new Vector3(Input.mousePosition.x, Input.mousePosition.y,
             cam.WorldToScreenPoint(transform.position).z));
         offset = transform.position - worldPos;
+
+        //audioSource.clip = SoundManager.Instance.pickSound;
+        //audioSource.Play();
     }
 
     void OnMouseDrag()
@@ -77,8 +110,40 @@ public class FoodItem : MonoBehaviour
         if (Physics.Raycast(ray, out hit) && hit.collider.CompareTag("Hotpot"))
         {
             EnterPot();
+            audioSource.clip = SoundManager.Instance.dropSound;
+            audioSource.Play();
+        }
+        else
+        {
+            // 回到原位
+            StartCoroutine(ReturnToOrigin());
         }
     }
+
+    IEnumerator ReturnToOrigin()
+    {
+        float duration = 0.3f;  // 回弹时长
+        float t = 0f;
+        Vector3 startPos = transform.position;
+        Quaternion startRot = transform.rotation;
+
+        while (t < duration)
+        {
+            t += Time.deltaTime;
+            float k = t / duration;
+            // 可加个缓动
+            k = Mathf.Sin(k * Mathf.PI * 0.5f);
+
+            transform.position = Vector3.Lerp(startPos, initialPos, k);
+            transform.rotation = Quaternion.Slerp(startRot, initialRot, k);
+
+            yield return null;
+        }
+
+        transform.position = initialPos;
+        transform.rotation = initialRot;
+    }
+
 
     public CookState GetCookState()
     {
@@ -91,8 +156,13 @@ public class FoodItem : MonoBehaviour
 
         rb.isKinematic = false;
         rb.useGravity = true;
-
         if (buoyancy != null) buoyancy.isActive = true;
+
+        if (col != null) col.isTrigger = false;   // 下锅时启用碰撞体
+        if (foodLayer >= 0 && potEdgeLayer >= 0)
+        {
+            Physics.IgnoreLayerCollision(foodLayer, potEdgeLayer, false);
+        }
 
         Debug.Log(name + " 下锅了！");
     }
@@ -124,6 +194,13 @@ public class FoodItem : MonoBehaviour
                 cookState = CookState.Cooked;
                 instanceMaterial.color = ripe; // 煮熟颜色
                 Debug.Log(name + " 煮熟了");
+                audioSource.clip = SoundManager.Instance.ripeSound;
+                audioSource.Play();
+
+                if (smokePrefab != null)
+                {
+                    Instantiate(smokePrefab, transform.position,smokePrefab.transform.rotation);
+                }
             }
             else if (cookState == CookState.Cooked && cookTimer >= overcookTime+cookTime)
             {
@@ -154,6 +231,9 @@ public class FoodItem : MonoBehaviour
                         }
 
                         StartExit();
+
+                        audioSource.clip = SoundManager.Instance.climpSound;
+                        audioSource.Play();
                     }
                 }
             }

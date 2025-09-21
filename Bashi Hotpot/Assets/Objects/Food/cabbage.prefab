@@ -31,13 +31,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5495496959488833803}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.022575617, y: 0.28528, z: -0.502658}
+  m_LocalRotation: {x: 0.0017315103, y: 0.7071047, z: -0.0017315508, w: 0.70710474}
+  m_LocalPosition: {x: -0.022586836, y: 0.28527546, z: -0.502658}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.281, y: 90, z: 0}
 --- !u!33 &1092618949782464938
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -108,7 +108,7 @@ MonoBehaviour:
   exitSpeed: 5
   exitDirection: {x: 0, y: 1, z: -1}
   cookTime: 10
-  overcookTime: 15
+  overcookTime: 10
   raw: {r: 0.9342962, g: 1, b: 0.65723264, a: 1}
   ripe: {r: 0.52366394, g: 0.7484276, b: 0.29890028, a: 1}
   burnt: {r: 0.11069677, g: 0.17610055, b: 0.07254456, a: 1}
@@ -168,9 +168,9 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.00299, y: 0.069149, z: 1.10555}
-  m_Center: {x: -0.00064507127, y: -0.25070554, z: -0.00470303}
+  m_Size: {x: 2.00299, y: 0.18613172, z: 0.89710855}
+  m_Center: {x: -0.00064507127, y: -0.1922146, z: 0.0995174}

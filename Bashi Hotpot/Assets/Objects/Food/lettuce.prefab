@@ -107,7 +107,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -155,11 +155,12 @@ MonoBehaviour:
   currentState: 0
   exitSpeed: 5
   exitDirection: {x: 0, y: 1, z: -1}
-  cookTime: 5
-  overcookTime: 7
+  cookTime: 10
+  overcookTime: 4
   raw: {r: 1, g: 1, b: 1, a: 1}
   ripe: {r: 0.20941901, g: 0.408805, b: 0.16326486, a: 1}
   burnt: {r: 0.083311066, g: 0.17610055, b: 0.06479169, a: 1}
+  foodType: 0
 --- !u!114 &763632887150610514
 MonoBehaviour:
   m_ObjectHideFlags: 0

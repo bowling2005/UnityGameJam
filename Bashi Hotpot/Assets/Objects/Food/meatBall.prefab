@@ -33,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.21197483, y: 0.2408259, z: -0.5449697}
-  m_LocalScale: {x: 0.12, y: 0.12, z: 0.12}
+  m_LocalScale: {x: 0.18, y: 0.18, z: 0.18}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -107,7 +107,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -128,8 +128,8 @@ MonoBehaviour:
   currentState: 0
   exitSpeed: 5
   exitDirection: {x: 0, y: 1, z: -1}
-  cookTime: 5
-  overcookTime: 10
+  cookTime: 8
+  overcookTime: 5
   raw: {r: 1, g: 1, b: 1, a: 1}
   ripe: {r: 0.54088044, g: 0.44530183, b: 0.42692134, a: 1}
   burnt: {r: 0.26666668, g: 0.13927954, b: 0.10588235, a: 1}

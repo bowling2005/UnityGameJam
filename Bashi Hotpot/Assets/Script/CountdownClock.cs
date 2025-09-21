@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class CountdownClock : MonoBehaviour
 {
@@ -7,7 +8,6 @@ public class CountdownClock : MonoBehaviour
     [Header("倒计时设置")]
     public float totalTime = 60f;   // 总时间（秒）
     private float timer;
-    public GameObject buffle;
 
     [Header("时钟指针")]
     public Transform clockHand;     // 指针对象
@@ -17,10 +17,25 @@ public class CountdownClock : MonoBehaviour
     public TextMeshProUGUI timerText;
 
     private bool isRunning = false;
-
+    AudioSource audioSource;
+    StartCountdownRawImages rawImages;
     private void Awake()
     {
         Instance = this;
+        audioSource = GetComponent<AudioSource>();
+        rawImages = GetComponent<StartCountdownRawImages>();
+    }
+    private void Start()
+    {
+
+        audioSource.clip = SoundManager.Instance.countDownSound;
+        audioSource.Play();
+        StartCoroutine(rawImages.DoCountdown());
+    }
+
+    public void Reset()
+    {
+        
     }
 
     void Update()
@@ -53,7 +68,8 @@ public class CountdownClock : MonoBehaviour
         {
             isRunning = false;
             Debug.Log("倒计时结束！");
-            buffle.SetActive(true);
+            StartCoroutine(rawImages.GameOver());
+            ResetManager.Instance.GameOver();
         }
     }
 

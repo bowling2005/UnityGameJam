@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.Collections;
 
 public class ComboManager : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class ComboManager : MonoBehaviour
 
     [Header("UI")]
     public RawImage[] comboSlots;  // UI 上三个槽位
-    public Texture2D meatIcon, vegIcon, mushroomIcon;  // 食材图标（普通图片）
+    public Texture2D rollIcon, cabIcon, ballIcon, doufuIcon, mushroomIcon, stomachIcon, brainIcon,shrimpIcon,lettuceIcon,clamIcon;  // 食材图标（普通图片）
 
     private List<FoodType> currentCombo = new List<FoodType>();
     private int currentIndex = 0;
@@ -51,9 +52,16 @@ public class ComboManager : MonoBehaviour
     {
         switch (type)
         {
-            case FoodType.MeatRoll: return meatIcon;
-            case FoodType.Cabbage: return vegIcon;
-            case FoodType.MeatBall: return mushroomIcon;
+            case FoodType.MeatRoll: return rollIcon;
+            case FoodType.Cabbage: return cabIcon;
+            case FoodType.MeatBall: return ballIcon;
+            case FoodType.Doufu: return doufuIcon;
+            case FoodType.Mushroom: return mushroomIcon;
+            case FoodType.Stomach: return stomachIcon;
+            case FoodType.Brain: return brainIcon;
+            case FoodType.Lettuce: return lettuceIcon;
+            case FoodType.Shrimp: return shrimpIcon;
+            case FoodType.Clam: return clamIcon;
             default: return null;
         }
     }
@@ -96,12 +104,33 @@ public class ComboManager : MonoBehaviour
 
     void BreakCombo()
     {
-        // 可以闪红、提示失败
-        for (int i = 0; i < comboSlots.Length; i++)
+        StopAllCoroutines();  // 避免上一次还在闪
+        StartCoroutine(FlashRed());
+        currentIndex = 0;
+    }
+
+    IEnumerator FlashRed()
+    {
+        int flashes = 3;           // 闪烁次数
+        float interval = 0.2f;     // 每次闪烁间隔
+
+        for (int f = 0; f < flashes; f++)
         {
-            comboSlots[i].color = Color.red;
+            // 变红
+            for (int i = 0; i < comboSlots.Length; i++)
+                comboSlots[i].color = Color.red;
+
+            yield return new WaitForSeconds(interval);
+
+            // 还原白色
+            for (int i = 0; i < comboSlots.Length; i++)
+                comboSlots[i].color = Color.white;
+
+            yield return new WaitForSeconds(interval);
         }
-        // 重置组合
-        GenerateNewCombo();
+
+        // 最后保持白色
+        for (int i = 0; i < comboSlots.Length; i++)
+            comboSlots[i].color = Color.white;
     }
 }

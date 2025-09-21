@@ -29,6 +29,7 @@ public class ScoreManager : MonoBehaviour
     {
         score += amount;
         UpdateUI();
+        GameResetManager.Instance.UpdateScore(score);
     }
 
 
@@ -36,7 +37,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (scoreText != null)
         {
-            scoreText.text = "Score: " + score;
+            scoreText.text = ""+score;
         }
     }
 }
