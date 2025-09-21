@@ -208,6 +208,8 @@ public class FoodItem : MonoBehaviour
                 instanceMaterial.color = burnt; // 过老颜色
                 Debug.Log(name + " 煮老了");
                 ScoreManager.Instance.ChangeScore(-3);
+                audioSource.clip = SoundManager.Instance.subScore;
+                audioSource.Play();
             }
 
             // 点击检测（夹起）
@@ -224,16 +226,15 @@ public class FoodItem : MonoBehaviour
                         if (cookState == CookState.Cooked)
                         {
                             ScoreManager.Instance.ChangeScore(5);
+                            audioSource.clip = SoundManager.Instance.addScore;
+                            audioSource.Play();
                         }
-                        else if(cookState == CookState.Raw)
-                        {
-                            ScoreManager.Instance.ChangeScore(-3);
-                        }
+                        //else if(cookState == CookState.Raw)
+                        //{
+                        //    ScoreManager.Instance.ChangeScore(-3);
+                        //}
 
                         StartExit();
-
-                        audioSource.clip = SoundManager.Instance.climpSound;
-                        audioSource.Play();
                     }
                 }
             }

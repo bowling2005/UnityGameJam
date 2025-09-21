@@ -9,22 +9,24 @@ public class ComboManager : MonoBehaviour
 
     [Header("UI")]
     public RawImage[] comboSlots;  // UI 上三个槽位
-
-    public Texture2D rollIcon, cabIcon, ballIcon, doufuIcon, mushroomIcon, stomachIcon, brainIcon, shrimpIcon, lettuceIcon, clamIcon;  // 食材图标（普通图片）
+    public Texture2D rollIcon, cabIcon, ballIcon, doufuIcon, mushroomIcon, stomachIcon, brainIcon,shrimpIcon,lettuceIcon,clamIcon;  // 食材图标（普通图片）
 
     private List<FoodType> currentCombo = new List<FoodType>();
-    public AudioSource audioSource; // 添加AudioSource引用
-    private List<bool> collectedFoods = new List<bool>(); // 跟踪已收集的食材
+    private int currentIndex = 0;
+
+    AudioSource audioSource;
 
     void Awake()
     {
         Instance = this;
+        audioSource = GetComponent<AudioSource>();
     }
+
 
     public void GenerateNewCombo()
     {
         currentCombo.Clear();
-        collectedFoods.Clear();
+        currentIndex = 0;
 
         List<FoodType> available = FoodSpawner.Instance.GetAvailableTypes();
         if (available.Count < 3)
@@ -33,12 +35,11 @@ public class ComboManager : MonoBehaviour
             return; // 食材不足无法生成
         }
 
-        // 随机选3种不同食材
-        for (int i = 0; i < 3; i++)
+            // 随机选3种不同食材
+            for (int i = 0; i < 3; i++)
         {
             int rand = Random.Range(0, available.Count);
             currentCombo.Add(available[rand]);
-            collectedFoods.Add(false); // 初始化为未收集
             available.RemoveAt(rand);
         }
 
@@ -77,59 +78,41 @@ public class ComboManager : MonoBehaviour
             return;
         }
 
-        // 检查是否在当前combo中
-        int index = currentCombo.IndexOf(food.foodType);
-
-        if (index >= 0)
+        // 判断是否正确顺序
+        if (food.foodType == currentCombo[currentIndex])
         {
-            // 如果已经收集过这个食材，忽略
-            if (collectedFoods[index])
-                return;
+            comboSlots[currentIndex].color = Color.green; // UI 上打勾效果
+            currentIndex++;
 
-            // 标记为已收集
-            collectedFoods[index] = true;
-            comboSlots[index].color = Color.green; // UI 上打勾效果
-
-            // 检查是否所有食材都已收集
-            if (CheckComboComplete())
+            if (currentIndex >= currentCombo.Count)
             {
                 // 成功完成连击！
                 ScoreManager.Instance.ChangeScore(50); // 额外奖励
                 audioSource.clip = SoundManager.Instance.combo;
                 audioSource.Play();
                 GenerateNewCombo();
-                ScoreManager.Instance.ChangeScore(50); // 额外奖励
             }
         }
         else
         {
-            // 如果食材不在combo中，检查是否已经不存在了
-            if (FoodSpawner.Instance.GetRemaining(food.foodType) <= 0)
+            for (int i = 0; i < currentCombo.Count; i++)
             {
-                GenerateNewCombo();
+                if (food.foodType == currentCombo[i] && FoodSpawner.Instance.GetRemaining(food.foodType) <= 0)
+                {
+                    GenerateNewCombo();
+                    return;
+                }
             }
-            else
-            {
-                BreakCombo();
-            }
+            BreakCombo();
         }
-    }
-
-    bool CheckComboComplete()
-    {
-        foreach (bool collected in collectedFoods)
-        {
-            if (!collected)
-                return false;
-        }
-        return true;
     }
 
     void BreakCombo()
     {
         StopAllCoroutines();  // 避免上一次还在闪
         StartCoroutine(FlashRed());
-        ResetComboProgress();
+        currentCombo.Clear();
+        GenerateNewCombo() ;
     }
 
     IEnumerator FlashRed()
@@ -157,21 +140,11 @@ public class ComboManager : MonoBehaviour
             comboSlots[i].color = Color.white;
     }
 
-    void ResetComboProgress()
-    {
-        // 重置收集状态但不生成新combo
-        for (int i = 0; i < collectedFoods.Count; i++)
-        {
-            collectedFoods[i] = false;
-            comboSlots[i].color = Color.white;
-        }
-    }
-
     public void ResetCombo()
     {
         StopAllCoroutines();   // 停止所有闪烁协程
         currentCombo.Clear();  // 清空当前组合
-        collectedFoods.Clear();
+        currentIndex = 0;
 
         // UI 重置为白色，图标清空
         for (int i = 0; i < comboSlots.Length; i++)
