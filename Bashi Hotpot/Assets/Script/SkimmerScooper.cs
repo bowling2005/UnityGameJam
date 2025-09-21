@@ -44,6 +44,7 @@ public class SkimmerScooper : MonoBehaviour
     private bool busy = false;
     private readonly List<FoodItem> collected = new List<FoodItem>();
 
+    AudioSource audioSource;
 
     void Awake()
     {
@@ -52,6 +53,7 @@ public class SkimmerScooper : MonoBehaviour
 
         instMat = GetComponent<Renderer>().material;
         originalColor = instMat.color;
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -84,6 +86,9 @@ public class SkimmerScooper : MonoBehaviour
     {
         busy = true;
         collected.Clear();
+
+        audioSource.clip = SoundManager.Instance.skimmer;
+        audioSource.Play();
 
         // 1) 平滑移动到锅边 + 旋转至目标四元数
         yield return TweenMoveAndRotate(transform, approachTarget.position,

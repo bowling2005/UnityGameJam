@@ -14,9 +14,12 @@ public class ComboManager : MonoBehaviour
     private List<FoodType> currentCombo = new List<FoodType>();
     private int currentIndex = 0;
 
+    AudioSource audioSource;
+
     void Awake()
     {
         Instance = this;
+        audioSource = GetComponent<AudioSource>();
     }
 
 
@@ -85,6 +88,8 @@ public class ComboManager : MonoBehaviour
             {
                 // 成功完成连击！
                 ScoreManager.Instance.ChangeScore(50); // 额外奖励
+                audioSource.clip = SoundManager.Instance.combo;
+                audioSource.Play();
                 GenerateNewCombo();
             }
         }
@@ -106,7 +111,8 @@ public class ComboManager : MonoBehaviour
     {
         StopAllCoroutines();  // 避免上一次还在闪
         StartCoroutine(FlashRed());
-        currentIndex = 0;
+        currentCombo.Clear();
+        GenerateNewCombo() ;
     }
 
     IEnumerator FlashRed()
