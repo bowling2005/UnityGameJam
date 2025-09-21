@@ -17,6 +17,9 @@ public class SoundManager : MonoBehaviour
     public AudioClip bgm;
     public AudioClip noise;
     public AudioClip combo;
+    public AudioClip addScore;
+    public AudioClip subScore;
+    public AudioClip skimmer;
     // Start is called before the first frame update
     private void Awake()
     {

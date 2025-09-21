@@ -12,6 +12,7 @@ public class GameUIHandler : MonoBehaviour
     public GameObject highScorePanel;
     public Text highScoreText;
     public Button closeHighScoreButton;
+    public GameObject Panel;
 
     private bool isHighScorePanelOpen = false;
 
@@ -33,6 +34,10 @@ public class GameUIHandler : MonoBehaviour
         {
             CloseHighScorePanel();
         }
+        if (Panel.activeSelf)
+            Time.timeScale = 0f;
+        else
+            Time.timeScale = 1f;
     }
 
     // 重置按钮点击事件
