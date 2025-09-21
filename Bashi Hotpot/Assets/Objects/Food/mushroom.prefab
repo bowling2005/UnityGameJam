@@ -158,8 +158,8 @@ MonoBehaviour:
   cookTime: 5
   overcookTime: 10
   raw: {r: 1, g: 1, b: 1, a: 1}
-  ripe: {r: 1, g: 1, b: 1, a: 1}
-  burnt: {r: 0.2578616, g: 0.15401368, b: 0.090008266, a: 1}
+  ripe: {r: 0.654088, g: 0.49626464, b: 0.4710256, a: 1}
+  burnt: {r: 0.16981131, g: 0.105768815, b: 0.06781771, a: 1}
   foodType: 0
 --- !u!114 &1985291268747854354
 MonoBehaviour:

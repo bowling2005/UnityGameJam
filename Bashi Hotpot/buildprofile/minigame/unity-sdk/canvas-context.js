@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});exports["default"]=void 0;var callbacks=[],isTriggered=!1,_default=exports["default"]={addCreatedListener:function addCreatedListener(callback){if(isTriggered){callback()}else{callbacks.push(callback)}},_triggerCallback:function _triggerCallback(){isTriggered=!0;callbacks.forEach(function(v){return v()})}};

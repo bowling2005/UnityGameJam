@@ -1,0 +1,43 @@
+{
+  "deviceOrientation": "portrait",
+  "appId": "68cfa8791e2f52cd99d9871c",
+  "companyName": "DefaultCompany",
+  "productName": "Bashi Hotpot",
+  "productVersion": "1.0.2",
+  "buildDescription": "",
+  "isWasmSplitSupport": false,
+  "convertScriptVersion": "0.1.1",
+  "convertToolVersion": "1.1.1",
+  "openDataContext": "open-data",
+  "iOSHighPerformance": true,
+  "iOSHighPerformance+": false,
+  "iOSHighPerformance+Metal": false,
+  "subpackages": [
+    {
+      "name": "wasmcode",
+      "root": "wasmcode/"
+    },
+    {
+      "name": "data-package",
+      "root": "data-package/"
+    }
+  ],
+  "parallelPreloadSubpackages": [
+    {
+      "name": "wasmcode"
+    },
+    {
+      "name": "data-package"
+    }
+  ],
+  "plugins": {
+    "UnityPlugin": {
+      "contexts": [
+        {
+          "type": "isolatedContext"
+        }
+      ]
+    }
+  },
+  "workers": "workers"
+}

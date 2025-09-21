@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});exports.MODULE_NAMES=void 0;var MODULE_NAMES=exports.MODULE_NAMES=["TJSDKManagerHandler","WXSDKManagerHandler"];

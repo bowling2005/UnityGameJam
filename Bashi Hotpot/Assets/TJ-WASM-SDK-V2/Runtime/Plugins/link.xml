@@ -1,0 +1,6 @@
+<linker>
+  <assembly fullname="LitJson" preserve="all"/>
+  <assembly fullname="minihost.runtime" preserve="all"/>
+  <assembly fullname="minihost-plugin.runtime" preserve="all"/>
+  <assembly fullname="minihost-plugin.wxadaptor.runtime" preserve="all"/>
+</linker>

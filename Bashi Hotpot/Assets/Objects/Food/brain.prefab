@@ -168,7 +168,7 @@ MonoBehaviour:
   currentState: 0
   exitSpeed: 5
   exitDirection: {x: 0, y: 1, z: -1}
-  cookTime: 45
+  cookTime: 30
   overcookTime: 10
   raw: {r: 1, g: 0.76415086, b: 0.76415086, a: 1}
   ripe: {r: 0.69182384, g: 0.6026264, b: 0.6026264, a: 1}

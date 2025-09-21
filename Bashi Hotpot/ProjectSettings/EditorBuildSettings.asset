@@ -11,7 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainGameScene.scene
     guid: 6d785866bbcb6524ea0f495c66777cf7
-  m_BuildProfiles: []
+  m_BuildProfiles:
+  - enabled: 1
+    path: Assets/Settings/Build Profiles/New MiniHost Profile.asset
+    guid: b93fa91a7d85a5b4598b5fb8510db1df
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 792316d7038bdbf4980c659437357de1,
       type: 2}

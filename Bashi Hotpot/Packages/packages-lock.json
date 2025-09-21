@@ -1,5 +1,44 @@
 {
   "dependencies": {
+    "cn.tuanjie.minihost": {
+      "version": "1.0.11",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.nuget.newtonsoft-json": "3.2.1"
+      },
+      "url": "https://packages.tuanjie.cn"
+    },
+    "cn.tuanjie.wx-uploader": {
+      "version": "0.1.4",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.nuget.mono-cecil": "1.10.1",
+        "com.unity.nuget.newtonsoft-json": "3.2.1"
+      },
+      "url": "https://packages.tuanjie.cn"
+    },
+    "com.bytedance.starksdk": {
+      "version": "file:../Assets/../LocalPackages/com.bytedance.starksdk@6.5.5",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
+    "com.kuaishou.minigame": {
+      "version": "https://github.com/ksminigame/minigame-tuanjie-transform-sdk.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "b0bccb13e834f63b578badee05de09dfd1021ca6"
+    },
+    "com.qq.weixin.minigame": {
+      "version": "https://gitee.com/wechat-minigame/minigame-tuanjie-transform-sdk.git#v0.1.18",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "4443e5a9bcf800118f7c3e10a7750e804ed3121b"
+    },
     "com.unity.adaptiveperformance": {
       "version": "4.0.1",
       "depth": 1,
@@ -73,6 +112,20 @@
       "dependencies": {
         "com.unity.modules.androidjni": "1.0.0"
       },
+      "url": "https://packages.tuanjie.cn"
+    },
+    "com.unity.nuget.mono-cecil": {
+      "version": "1.11.4",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.tuanjie.cn"
+    },
+    "com.unity.nuget.newtonsoft-json": {
+      "version": "3.2.1",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
       "url": "https://packages.tuanjie.cn"
     },
     "com.unity.profiling.core": {

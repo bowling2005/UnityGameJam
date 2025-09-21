@@ -1,5 +1,10 @@
 {
   "dependencies": {
+    "cn.tuanjie.minihost": "1.0.11",
+    "cn.tuanjie.wx-uploader": "0.1.4",
+    "com.bytedance.starksdk": "file:../Assets/../LocalPackages/com.bytedance.starksdk@6.5.5",
+    "com.kuaishou.minigame": "https://github.com/ksminigame/minigame-tuanjie-transform-sdk.git",
+    "com.qq.weixin.minigame": "https://gitee.com/wechat-minigame/minigame-tuanjie-transform-sdk.git#v0.1.18",
     "com.unity.collab-proxy": "2.9.3",
     "com.unity.feature.mobile": "1.0.0",
     "com.unity.ide.rider": "3.0.35",

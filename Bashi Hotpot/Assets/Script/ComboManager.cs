@@ -18,6 +18,7 @@ public class ComboManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void GenerateNewCombo()
@@ -96,6 +97,7 @@ public class ComboManager : MonoBehaviour
                 ScoreManager.Instance.ChangeScore(50); // ¶îÍâ½±Àø
                 audioSource.clip = SoundManager.Instance.combo;
                 audioSource.Play();
+                currentCombo.Clear();
                 GenerateNewCombo();
             }
         }
