@@ -654,7 +654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85c320b20fc060a4eb8a2e6db22ec5e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalTime: 60
+  totalTime: 5
   clockHand: {fileID: 2066236709}
   offset: 53
   timerText: {fileID: 0}
@@ -1934,7 +1934,6 @@ MonoBehaviour:
     spacing: {x: 0.15, y: 0, z: 0}
   startPosition: {fileID: 498574548}
   rowSpacing: {x: 0, y: 0, z: -0.16}
-  secondLayerStartRow: 3
   secondLayerOffset: {x: 0, y: -0.1, z: 0}
   smoke: {fileID: 1283287112405170596, guid: bbf82a6d78573cf4dada566b1968a157, type: 3}
 --- !u!1 &1329574216

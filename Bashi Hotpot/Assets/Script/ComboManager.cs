@@ -133,4 +133,21 @@ public class ComboManager : MonoBehaviour
         for (int i = 0; i < comboSlots.Length; i++)
             comboSlots[i].color = Color.white;
     }
+
+    public void ResetCombo()
+    {
+        StopAllCoroutines();   // 停止所有闪烁协程
+        currentCombo.Clear();  // 清空当前组合
+        currentIndex = 0;
+
+        // UI 重置为白色，图标清空
+        for (int i = 0; i < comboSlots.Length; i++)
+        {
+            comboSlots[i].texture = null;
+            comboSlots[i].color = Color.white;
+        }
+
+        // 重新生成一套组合
+        GenerateNewCombo();
+    }
 }

@@ -8,18 +8,20 @@ public class ResetManager : MonoBehaviour
     public GameObject buffle;
     public AudioSource potAudio;
     AudioSource bgmAudio;
+    SkimmerScooper skimmerScooper;
     //public AudioSource noiseAudio;
     // Start is called before the first frame update
     private void Awake()
     {
         Instance = this;
         bgmAudio = GetComponent<AudioSource>();
+
     }
 
     void Start()
     {
+        skimmerScooper = FindObjectOfType<SkimmerScooper>();
         buffle.SetActive(true);
-
     }
 
     public void GameStart()
@@ -40,10 +42,17 @@ public class ResetManager : MonoBehaviour
         potAudio.Stop();
         bgmAudio.Stop();
         //noiseAudio.Stop();
+        //Invoke("Reset", 3f);
     }
 
     public void Reset()
     {
-        
+        Debug.Log("reset");
+        FoodSpawner.Instance.ResetGame();
+        ComboManager.Instance.ResetCombo();
+        CountdownClock.Instance.ResetClock();
+        skimmerScooper.ResetSkimmer();
+
+        CountdownClock.Instance.StartGame();
     }
 }

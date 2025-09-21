@@ -295,4 +295,27 @@ public class SkimmerScooper : MonoBehaviour
         target.position = toPos;
         target.rotation = toRot;
     }
+
+    public void ResetSkimmer()
+    {
+        // 停掉所有协程，避免还在Tween/Cooldown中
+        StopAllCoroutines();
+
+        // 清除已收集的食材引用（不销毁，因为收集动作没完成就直接reset了）
+        collected.Clear();
+
+        // 还原位置、旋转、缩放
+        transform.position = originalPos;
+        transform.rotation = originalRot;
+        transform.localScale = Vector3.one;
+
+        // 还原材质颜色
+        if (instMat != null)
+            instMat.color = originalColor;
+
+        // 状态清空
+        busy = false;
+        onCooldown = false;
+    }
+
 }

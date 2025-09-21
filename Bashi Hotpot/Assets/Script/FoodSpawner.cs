@@ -42,7 +42,7 @@ public class FoodSpawner : MonoBehaviour
     public Transform startPosition;     // 起始位置
     public Vector3 rowSpacing = new Vector3(0f, 0f, 2f);  // 行与行之间的间距
     [Header("层级配置")]
-    public int secondLayerStartRow = 3;     // 从第几行开始放到第二层
+    //public int secondLayerStartRow = 3;     // 从第几行开始放到第二层
     public Vector3 secondLayerOffset = new Vector3(0f, 1f, 0f); // 第二层整体偏移（比如向上1）
 
     public GameObject smoke;
@@ -80,6 +80,7 @@ public class FoodSpawner : MonoBehaviour
                     var obj = Instantiate(data.prefab, currentPos, data.prefab.transform.rotation);
                     obj.GetComponent<FoodItem>().foodType = data.type;
                     currentPos += row.spacing; // 行内间距
+                    spawned.Add(obj);
                 }
             }
         }
@@ -102,6 +103,7 @@ public class FoodSpawner : MonoBehaviour
                     var obj = Instantiate(data.prefab, currentPos, data.prefab.transform.rotation);
                     obj.GetComponent<FoodItem>().foodType = data.type;
                     currentPos += row.spacing; // 行内间距
+                    spawned.Add(obj);
                 }
             }
         }
