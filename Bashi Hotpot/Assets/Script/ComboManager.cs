@@ -129,7 +129,10 @@ public class ComboManager : MonoBehaviour
     {
         StopAllCoroutines();  // 避免上一次还在闪
         StartCoroutine(FlashRed());
-        ResetComboProgress();
+        //ResetComboProgress();
+        currentCombo.Clear();
+        GenerateNewCombo();
+
     }
 
     IEnumerator FlashRed()
